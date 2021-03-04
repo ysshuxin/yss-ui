@@ -16,7 +16,7 @@
 </div>
 </template>
 <script>
-   import {menu} from './router/index'
+   import {menu} from '@/router/index'
     export default {
         name: "App",
         computed:{

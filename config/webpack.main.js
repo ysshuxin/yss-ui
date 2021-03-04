@@ -1,3 +1,4 @@
+const VueLoaderPlugin = require('vue-loader/lib/plugin')
 const path = require("path");
 const { merge } = require("webpack-merge");
 const webpackBaseConfig = require("./webpack.base.js");
@@ -17,5 +18,8 @@ module.exports = merge(webpackBaseConfig, {
       commonjs2: 'vue',
       amd: 'vue'
     }
-  }
+  },
+  plugins: [
+    new VueLoaderPlugin()
+  ]
 });

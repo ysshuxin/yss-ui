@@ -1,8 +1,18 @@
 <template>
-    <div @click="share" class="bh-share">{{txt}}</div>
+    <div @click="share" :class="classNamespace('121212',[
+          'type',
+          'size',
+          {
+            plain:'plain',
+            block:'block',
+            round:'round'
+          }
+        ])">{{txt}}</div>
 </template>
 <script>
     import {Toast} from 'vant'
+    import {createNamespace} from '../../../utils/dev/index'
+    const {classNamespace}=createNamespace('share')
     export default {
         name: "index",
         props:{
@@ -12,6 +22,7 @@
             },
         },
         methods:{
+            classNamespace,
             share(){
                 Toast('分享成功')
             }

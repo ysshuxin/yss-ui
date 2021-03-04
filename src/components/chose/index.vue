@@ -1,20 +1,19 @@
 <template>
 <div>
-    <card>
-        <slot>
-            <br>
-            <p>zheshiyigedd</p>
-        </slot>
-    </card>
+    <p>test</p>
+    <div @click="click"></div>
 </div>
 </template>
 
 <script>
 
-    import card from '../card/index'
     export default {
         name: "index",
-        components:{card}
+        methods:{
+            click(){
+                return 4
+            }
+        }
     }
 </script>
 

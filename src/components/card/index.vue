@@ -1,14 +1,13 @@
 <template>
     <div class="bh-card">
         <slot></slot>
+        <div class="test">111</div>
     </div>
 </template>
 
 <script>
-    import {Button} from 'vant'
     export default {
         name: "index",
-        components:{Button}
     }
 </script>
 

@@ -1,5 +1,4 @@
 const path = require('path');
-const VueLoaderPlugin = require('vue-loader/lib/plugin')
 function resolve(dir) {
   return path.join(__dirname, '..', dir);
 }
@@ -44,19 +43,9 @@ module.exports = {
         test: /\.(gif|jpg|png|woff|svg|eot|ttf)\??.*$/,
         loader: "url-loader",
         options: {
-          limit: 8192
+          limit: 8192,
+          esModule:false
         }
-      },
-      {
-        test: /\.md$/,
-        use: [
-          {
-            loader: 'vue-loader',
-          },
-          {
-            loader: require.resolve('../utils/markdown-loader'),
-          },
-        ]
       }
     ]
   },
@@ -65,8 +54,5 @@ module.exports = {
     alias: {
       '@': resolve('src'),
     }
-  },
-  plugins: [
-    new VueLoaderPlugin()
-  ]
+  }
 };

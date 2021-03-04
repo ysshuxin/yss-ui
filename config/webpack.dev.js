@@ -1,3 +1,6 @@
+
+const VueLoaderPlugin = require('vue-loader/lib/plugin')
+
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
@@ -14,6 +17,7 @@ module.exports = merge(webpackBaseConfig,
         contentBase: '../dist',
     },
     plugins: [
+        new VueLoaderPlugin(),
         new CleanWebpackPlugin({ cleanStaleWebpackAssets: false }),
         new HtmlWebpackPlugin({
             title: 'Output Management',
@@ -25,6 +29,4 @@ module.exports = merge(webpackBaseConfig,
         filename: '[name].bundle.js',
         path: path.resolve(__dirname, 'dist'),
     },
-
-
 })

@@ -1,8 +1,4 @@
-
 const exec = require('child_process').exec;
-
-
-
 class HotBuild {
     // Define `apply` as its prototype method which is supplied with compiler as its argument
     apply(compiler) {
@@ -16,6 +12,4 @@ class HotBuild {
         });
     }
 }
-
-
 module.exports=HotBuild
